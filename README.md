@@ -5,12 +5,12 @@ L'application a pour but d'aider la communauté de développeur débutant à tra
 Les utilisateurs postent les problèmes rencontrés et d'autres développeurs se chargent de les aider.
 
 --------------------------------
-##Features disponibles
+## Features disponibles
 --------------------------------
 
-* Système de catégories
+* Ruby version
 
-* Classement des tickets par titre
+* System dependencies
 
 * Système de résolution de tickets
 
@@ -19,10 +19,10 @@ Les utilisateurs postent les problèmes rencontrés et d'autres développeurs se
 * Inscription utilisateurs
 
 --------------------------------
-##Features en cours
+## Features en cours
 --------------------------------
 
-* Système de vote
+* Services (job queues, cache servers, search engines, etc.)
 
 * Système de badge et de récompense pour les personnes actives
 
