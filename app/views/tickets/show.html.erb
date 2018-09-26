@@ -1,0 +1,53 @@
+<div class="container show-ticket">
+  <p id="notice"><%= notice %></p>
+  <div class="image-ticket medium-size">
+    <%= image_tag @ticket.category.image_url %>
+  </div>
+  <div class="row ticket-header">
+    <div class="col s8 title-ticket">
+      <h1><%= @ticket.title %></h1>
+    </div>
+    <div class="col s4 resolve-ticket-action">
+      <p>
+        <% if can? :update, @ticket %>
+          <%= link_to 'Marqué comme résolu', @ticket, class: 'btn btn-green resolve-button ' unless @ticket.resolve %>
+        <% end %></p>
+
+    </div>
+
+  </div>
+  <div class="row ticket-body">
+    <div class="body-content">
+      <div class="user-pseudo-ticket">
+        <%= @ticket.user.pseudo %>
+      </div>
+    <div class="date-ticket">
+      <%= l @ticket.created_at, format: :short %>
+    </div>
+  </div>
+  <div class="ticket-body">
+    <p style="padding-left: 15px;">
+      <%= @ticket.body %>
+    </p>
+  </div>
+  <div class="actions-ticket">
+    <% if can? :update, @ticket %>
+      <%= link_to 'Éditer', edit_ticket_path(@ticket), class: 'btn' %>
+    <% end %>
+    <% if can? :destoy, @ticket %>
+      <%= link_to 'Supprimer', ticket_path(@ticket, :from => "ticket"), :method => :delete, class: 'btn btn-red', data: {confirm: 'Voulez-vous vraiment supprimer ce ticket ?'} %>
+    <% end %>
+    <%= link_to 'Retour', tickets_path, class: 'btn' %>
+  </div>
+</div>
+
+<div class="field">
+  <h5><%= @ticket.comment.count %> réponse(s)</h5>
+  <%= render @ticket.comment %>
+  <% if user_signed_in? %>
+    <%= render 'comments/form' %>
+  <% else %>
+    <h5 class="center-align">Vous souhaitez apporter votre aide ? Inscrivez-vous gratuitement !</h5>
+  <% end %>
+</div>
+</div>

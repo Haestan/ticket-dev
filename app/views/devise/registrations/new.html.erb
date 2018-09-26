@@ -1,0 +1,33 @@
+<div class="container max-size-input">
+  <h2 class="center-align">S'inscrire'</h2>
+
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email' %>
+    </div>
+
+    <div class="field">
+      <%= f.input_field :pseudo, placeholder: 'Pseudonyme' %>
+    </div>
+
+    <div class="field">
+      <em>6 caractères minimum, doit inclure au moins une lettre minuscule, une lettre majuscule et un chiffre</em>
+  <% if @minimum_password_length %>
+  <% end %>
+  <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Mot de passe' %>
+</div>
+
+    <div class="field">
+      <%= f.password_field :password_field , autocomplete: "new-password", placeholder: 'Confirmer mot de passe' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "S'inscrire", class: 'btn' %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+
+</div>

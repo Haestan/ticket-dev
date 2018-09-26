@@ -1,0 +1,12 @@
+//Variable font-size de base
+$base-font-size: 18px;
+
+//Fonction qui supprime l'unité de mesure d'une valeur
+@function trim-unit($value){
+  @return $value / ($value * 0 +1);
+}
+
+//Function qui transforme les pixels en REM
+@function rem-calc($value){
+  @return $value / trim-unit($base-font-size) * 1rem;
+}

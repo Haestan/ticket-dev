@@ -1,0 +1,48 @@
+<div class="container">
+
+    <%= simple_form_for(@ticket) do |f| %>
+    <ul>
+      <% @ticket.errors.full_messages.each do |message| %>
+        <li style="color: red;"><%= message %></li>
+      <% end %>
+    </ul>
+
+    <% if can? :destroy, @ticket %>
+      <div class="field">
+        <%= f.input :resolve, as: :radio_buttons, label: 'Résolu ?', class: 'event-radio-button' %>
+      </div>
+      <% end %>
+
+    <div class="field">
+      <%= f.hidden_field :user_id , :value => current_user.id %>
+    </div>
+
+    <div class="form-inputs form_design">
+      <div class="field">
+        <%= f.input :title, label: 'Titre', placeholder: "Exemple de titre : JavaScript - Dupliquer le contenu d'une classe" %>
+      </div>
+
+      <div class="field body-field">
+        <%= f.input :body, label: "Message" %>
+      </div>
+      <div class="field">
+        <%= f.association :category, as: :radio_buttons, include_blank: false, label: 'Catégorie' %>
+      </div>
+
+    </div>
+
+    <div class="action_posts">
+
+      <div class="form-actions back_to_root">
+        <%= link_to 'Retour', tickets_path, class: 'btn' %>
+      </div>
+
+      <div class="form-actions">
+      <%= f.button :submit, 'Publier' %>
+    </div>
+
+    </div>
+
+  <% end %>
+
+</div>

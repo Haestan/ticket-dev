@@ -1,0 +1,45 @@
+<div class="container">
+  <% if user_signed_in? && current_user.admin %>
+    <div class="form_basic_low_size">
+
+      <%= simple_form_for(@category) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <div class="form-inputs field">
+          <%= f.input :title %>
+        </div>
+
+        <div class="form-inputs field">
+          <%= f.input :slug %>
+        </div>
+
+        <div class="form-actions field">
+          <div class="field">
+            <%= f.label 'Avatar' %>
+          </div>
+          <div class="field">
+            <% if @category.image? %>
+              <div class="max_size_image field">
+                <%= image_tag @category.image_url %>
+            <% end %>
+            </div>
+            <%= f.input :image, as: :file, label: false %>
+          </div>
+        </div>
+
+        <div class="action_posts">
+          <div class="form-actions">
+            <%= f.button :submit, 'Publier' %>
+          </div>
+
+          <div class="form-actions back_to_root">
+            <%= link_to 'Back', tickets_path, class: 'btn' %>
+          </div>
+        </div>
+
+      <% end %>
+
+    </div>
+  <% end %>
+</div>

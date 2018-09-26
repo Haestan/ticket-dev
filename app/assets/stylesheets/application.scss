@@ -1,0 +1,203 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+@import "materialize";
+@import "font";
+@import "variables";
+@import "mixins";
+@import "base";
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Abel', sans-serif;
+  background: #F9F9F9;
+}
+
+/*-------------------------
+BASE SIZE FONT
+-------------------------*/
+h1 {
+  font-size: 2rem !important;
+}
+
+/*-------------------------
+CONTENT
+-------------------------*/
+body {
+  margin: 0;
+  padding: 0;
+  font-size: $base-font-size;
+  color: $black;
+}
+
+/*-------------------------
+NAVIGATION
+-------------------------*/
+header{
+  position: relative;
+  background: url("../../assets/header.jpg") bottom;
+  nav {
+    height: 100px;
+    border-bottom: 1px solid $orange;
+    background: transparent;
+    .nav-wrapper {
+      line-height: 100px;
+      img {
+        margin-left: 50px;
+      }
+      ul {
+        .welcome_email a {
+          font-size: $low-font-size !important;
+          color: $orange;
+          padding: 1px 15px;
+        }
+        li {
+          a {
+            &:hover .material-icons {
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+  }
+  #index-banner{
+    position: relative;
+    h1{
+      color: $orange;
+    }
+    h5{
+      color: $light-white;
+    }
+  }
+}
+#nav-mobile {
+  left: -1px;
+  background: $black;
+  li a {
+    color: $white;
+  }
+}
+
+/*-------------------------
+INDEX
+-------------------------*/
+.all-tickets{
+  .max-size-line{
+    max-width: 110px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .main-block{
+    padding: 25px;
+    margin-bottom: 5em;
+    background: $light-white;
+    border-radius: 5px;
+  }
+  .icons-red{
+    padding-left: 25px;
+    color: $red;
+  }
+  .icons-green{
+    padding-left: 25px;
+    color: $green;
+  }
+}
+.categories-tickets{
+  padding: 25px;
+  margin-bottom: 5em;
+}
+.pagination{
+  text-align: center;
+  a{
+    color: $black !important;
+  }
+  i{
+    color: $black;
+  }
+  li.active{
+    background: $black;
+    color: $light-white;
+  }
+  li{
+    padding: 0 15px;
+  }
+}
+
+/*-------------------------
+TICKETS
+-------------------------*/
+.show-ticket{
+  position: relative;
+  .image-ticket{
+    text-align: center;
+  }
+  .ticket-header{
+    border-bottom: 2px solid rgba($black, 0.3);
+    .title-ticket{
+      padding: 0;
+    }
+    .resolve-ticket-action{
+      text-align: right;
+    }
+  }
+  .ticket-body{
+    background: $light-white;
+    position: relative;
+    min-height: 250px;
+    border-radius: 15px;
+    .body-content{
+      font-size: 1.2em;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  .actions-ticket{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  .user-informations{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/*-------------------------
+COMMENTS
+-------------------------*/
+.comment-show{
+  position: relative;
+  background: $light-white;
+  border-radius: 15px;
+  margin: 20px;
+  .comments{
+    padding: 15px;
+    .comment-header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .comment-body{
+      padding: 15px;
+    }
+  }
+}

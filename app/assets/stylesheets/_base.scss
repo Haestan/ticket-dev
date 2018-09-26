@@ -1,0 +1,166 @@
+@import "mixins";
+@import "variables";
+
+/*-------------------------
+BASES
+-------------------------*/
+//.container {
+//  width: 960px;
+//  max-width: initial;
+//}
+
+td, th {
+  padding: 10px 0;
+}
+#new_ticket > div.form-inputs.form_design > div.field.body-field > trix-editor {
+  min-width: 250px;
+}
+.btn {
+  @include btn;
+}
+
+.btn-green {
+  @include btn-green
+}
+
+.btn-red {
+  @include btn-red
+}
+
+.material-icons {
+  font-size: 1.5em !important;
+  color: $orange;
+}
+
+.field {
+  margin: 30px 0;
+}
+
+.max-size-input {
+  width: 500px;
+  max-width: initial;
+}
+
+.form_basic_low_size {
+  width: 50%;
+  max-width: initial;
+  margin: 0 auto;
+}
+
+.max_size_image {
+  text-align: center;
+  img {
+    width: 200px;
+  }
+}
+
+.thumbnail {
+  text-align: left;
+  img {
+    width: 35px;
+  }
+}
+
+.medium-size {
+  img {
+    width: 100px;
+  }
+}
+
+.drag-target {
+  display: none;
+}
+
+.search-bar {
+  text-align: center;
+}
+
+.m-inverse-top {
+  margin-top: -7rem !important;
+}
+
+.max-size {
+  font-size: 8vmin;
+}
+
+.ticket_category {
+  .form-check {
+    margin: 0 25px 0 0;
+    display: inline-flex;
+  }
+}
+
+.action_posts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 0 2em 0;
+}
+
+#ticket_body {
+  height: 350px;
+}
+
+.alert-rules {
+  text-align: center;
+  color: $red;
+  background: rgba($black, 0.1);
+  width: 50%;
+  min-width: initial;
+  margin: 0 auto;
+  ul {
+    padding: 15px;
+  }
+}
+
+.current-pseudo label {
+  font-size: 1em;
+  color: $black;
+}
+
+.p-bot {
+  padding-bottom: 4em;
+}
+
+.p-top {
+  padding-top: 4em;
+}
+
+.background {
+  background: #f0f0f0;
+}
+
+#notice {
+  text-align: center;
+  font-size: 0.8em;
+  color: $black;
+  border-radius: 15px;
+}
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:after {
+  background: $orange;
+}
+
+[type="radio"]:checked + label:after, [type="radio"].with-gap:checked + label:before, [type="radio"].with-gap:checked + label:after {
+  border: 2px solid rgba($orange, 0.7);
+}
+
+[type="checkbox"]:checked + label:before {
+  border-right: 2px solid $orange;
+  border-bottom: 2px solid $orange;
+}
+
+.user-pseudo-ticket {
+  background: $orange;
+  padding: 5px;
+  color: $light-white;
+  border-radius: 5px;
+  min-width: 100px;
+  text-align: center;
+}
+
+#comment_body{
+  height: 350px !important;
+  outline: none;
+  border: 2px solid $black;
+}

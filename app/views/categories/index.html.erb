@@ -1,0 +1,36 @@
+<div class="container categories-tickets background">
+
+  <p id="notice"><%= notice %></p>
+
+  <h1 class="center-align">Catégories</h1>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Language</th>
+      <th></th>
+      <th>Lire</th>
+      <% if user_signed_in? && current_user.admin %>
+        <th>Actions</th>
+      <% end %>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td class="thumbnail"><%= image_tag category.image_url %></td>
+        <td><%= category.title %></td>
+        <td><%= link_to 'Voir les tickets liés', category %></td>
+        <% if user_signed_in? && current_user.admin %>
+          <td><%= link_to 'Éditer', edit_category_path(category) %></td>
+          <td><%= link_to 'Supprimer', category, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        <% end %>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+</div>

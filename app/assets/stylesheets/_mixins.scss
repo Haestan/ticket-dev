@@ -1,0 +1,30 @@
+@import "variables";
+
+/* ------- BUTTONS MIXINS ------- */
+@mixin btn {
+  background: $black;
+  border-radius: 8px;
+  font-size: 0.8em;
+  margin: 5px 0;
+  &:hover {
+    background: $orange;
+  }
+}
+
+@mixin btn-green{
+  background: $green;
+  border-radius: 8px;
+  font-size: 0.8em;
+  &:hover{
+    background: $black;
+  }
+}
+
+@mixin btn-red{
+  background: $red;
+  border-radius: 8px;
+  font-size: 0.8em;
+  &:hover{
+    background: $black;
+  }
+}

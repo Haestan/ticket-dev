@@ -1,0 +1,30 @@
+<div class="comment-show">
+  <div class="comments">
+    <div class="comment-header">
+      <div class="user-pseudo-ticket">
+        <small>        <%= comment.name %>
+        </small>
+      </div>
+      <div class="date-comment">
+        Il y a : <%= time_ago_in_words(comment.created_at) %>
+      </div>
+    </div>
+    <div class="comment-body">
+      <%= comment.body.to_s.html_safe %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="field">
+</div>
+<div class="field">
+</div>
+<div class="field">
+</div>

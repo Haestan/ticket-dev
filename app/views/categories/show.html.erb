@@ -1,0 +1,16 @@
+<div class="center-align">
+  <p id="notice"><%= notice %></p>
+
+  <div class="max_size_image field">
+    <%= image_tag @category.image_url %>
+  </div>
+
+  <div class="max_size_image field">
+    <%= @category.slug %>
+  </div>
+  <%= link_to 'Éditer', edit_category_path(@category) %> |
+  <%= link_to 'Retour', categories_path %>
+
+  <% @category.inspect %>
+
+</div>

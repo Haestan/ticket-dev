@@ -1,0 +1,54 @@
+<!--- NAVIGATION --->
+<header>
+  <nav role="navigation">
+    <div class="nav-wrapper">
+      <a id="left logo-container" href="<%= root_path %>" class="brand-logo"><img src="../../assets/logo.png" alt="" width="100"></a>
+      <ul class="right hide-on-med-and-down">
+        <% if user_signed_in? %>
+          <li class="function welcome_email">
+            <a href="<%= edit_user_registration_path %>">Bienvenue <%= current_user.pseudo %></a></li>
+        <% end %>
+        <li><a href="<%= tickets_path %>">Tickets en cours</a></li>
+        <li class="function"><a href="<%= status_resolved_path %>">Tickets résolus</a></li>
+        <% if user_signed_in? %>
+          <li>
+            <a class="btn" href="<%= new_ticket_path %>">Ajouter ticket <i class="material-icons right">add</i></a>
+          </li>
+          <li>
+            <%= link_to "Se déconnecter", destroy_user_session_path, :method => :delete, class: 'btn' %>
+          </li>
+        <% else %>
+          <li><a class="btn waves-effect waves-light" href="<%= new_user_registration_path %>">S'inscrire</a></li>
+          <li><a class="btn waves-effect waves-light" href="<%= user_session_path %>">Se connecter</a></li>
+        <% end %>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li class="function"><a href="#">Fonctionnement</a></li>
+        <li class="rules"><a href="#">Règles</a></li>
+        <li><a href="#">Tout les tickets</a></li>
+        <li><a href="#" class="contact">Contact</a></li>
+        <li>
+          <a class="btn waves-effect waves-light btn modal-trigger" href="#">S'inscrire<i class="material-icons right">add</i></a>
+        </li>
+        <li><a class="btn waves-effect waves-light btn modal-trigger" href="">Se
+          connecter<i class="material-icons right">add</i></a></li>
+        <li><a class="waves-effect btn">Ajouter ticket <i class="material-icons right">add</i></a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div id="index-banner" class="">
+    <div class="section">
+      <div class="">
+        <h1 class="header center">Ticket-Dev</h1>
+        <div class="row center">
+          <h5 class="header col s12">Espace d'entraide entre développeurs <br><span class="col s12" style="color: #FFC107; font-size: 2em; padding: 25px 0;">100% GRATUIT !</span>
+             <br><br>Partagez vos connaissances avec d'autres développeurs ! Aidez et soyez aidé en retour !
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!--- END NAVIGATION --->

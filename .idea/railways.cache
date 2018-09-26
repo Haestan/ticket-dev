@@ -1,0 +1,50 @@
+                   Prefix Verb   URI Pattern                                                                              Controller#Action
+          status_resolved GET    /status/resolved(.:format)                                                               status#resolved
+               categories GET    /categories(.:format)                                                                    categories#index
+                          POST   /categories(.:format)                                                                    categories#create
+             new_category GET    /categories/new(.:format)                                                                categories#new
+            edit_category GET    /categories/:id/edit(.:format)                                                           categories#edit
+                 category GET    /categories/:id(.:format)                                                                categories#show
+                          PATCH  /categories/:id(.:format)                                                                categories#update
+                          PUT    /categories/:id(.:format)                                                                categories#update
+                          DELETE /categories/:id(.:format)                                                                categories#destroy
+          ticket_comments GET    /tickets/:ticket_id/comments(.:format)                                                   comments#index
+                          POST   /tickets/:ticket_id/comments(.:format)                                                   comments#create
+       new_ticket_comment GET    /tickets/:ticket_id/comments/new(.:format)                                               comments#new
+      edit_ticket_comment GET    /tickets/:ticket_id/comments/:id/edit(.:format)                                          comments#edit
+           ticket_comment GET    /tickets/:ticket_id/comments/:id(.:format)                                               comments#show
+                          PATCH  /tickets/:ticket_id/comments/:id(.:format)                                               comments#update
+                          PUT    /tickets/:ticket_id/comments/:id(.:format)                                               comments#update
+                          DELETE /tickets/:ticket_id/comments/:id(.:format)                                               comments#destroy
+                  tickets GET    /tickets(.:format)                                                                       tickets#index
+                          POST   /tickets(.:format)                                                                       tickets#create
+               new_ticket GET    /tickets/new(.:format)                                                                   tickets#new
+              edit_ticket GET    /tickets/:id/edit(.:format)                                                              tickets#edit
+                   ticket GET    /tickets/:id(.:format)                                                                   tickets#show
+                          PATCH  /tickets/:id(.:format)                                                                   tickets#update
+                          PUT    /tickets/:id(.:format)                                                                   tickets#update
+                          DELETE /tickets/:id(.:format)                                                                   tickets#destroy
+         new_user_session GET    /users/sign_in(.:format)                                                                 devise/sessions#new
+             user_session POST   /users/sign_in(.:format)                                                                 devise/sessions#create
+     destroy_user_session DELETE /users/sign_out(.:format)                                                                devise/sessions#destroy
+        new_user_password GET    /users/password/new(.:format)                                                            devise/passwords#new
+       edit_user_password GET    /users/password/edit(.:format)                                                           devise/passwords#edit
+            user_password PATCH  /users/password(.:format)                                                                devise/passwords#update
+                          PUT    /users/password(.:format)                                                                devise/passwords#update
+                          POST   /users/password(.:format)                                                                devise/passwords#create
+ cancel_user_registration GET    /users/cancel(.:format)                                                                  registrations#cancel
+    new_user_registration GET    /users/sign_up(.:format)                                                                 registrations#new
+   edit_user_registration GET    /users/edit(.:format)                                                                    registrations#edit
+        user_registration PATCH  /users(.:format)                                                                         registrations#update
+                          PUT    /users(.:format)                                                                         registrations#update
+                          DELETE /users(.:format)                                                                         registrations#destroy
+                          POST   /users(.:format)                                                                         registrations#create
+    new_user_confirmation GET    /users/confirmation/new(.:format)                                                        devise/confirmations#new
+        user_confirmation GET    /users/confirmation(.:format)                                                            devise/confirmations#show
+                          POST   /users/confirmation(.:format)                                                            devise/confirmations#create
+                     root GET    /                                                                                        tickets#index
+       rails_service_blob GET    /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
+rails_blob_representation GET    /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
+       rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
+update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
+     rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create

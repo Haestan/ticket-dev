@@ -1,0 +1,25 @@
+<div class="container">
+
+  <% if @ticket.resolve %>
+    <h4 class="center-align" style="color: green">Le ticket a été résolu et clôturé</h4>
+  <% else %>
+    <%= simple_form_for [@ticket, Comment.new] do |f| %>
+
+      <div class="field">
+        <%= f.label 'Vous répondez en tant que : ' %>
+        <%= f.text_field :name, value: current_user.pseudo, placeholder: current_user.pseudo, :readonly => true%>
+      </div>
+
+      <div class="field body-field">
+        <%= f.input :body, label: 'Répondre' %>
+      </div>
+
+      <div class="form-inputs right-align">
+        <div class="field">
+          <%= f.button :submit, 'Publier' %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+</div>
